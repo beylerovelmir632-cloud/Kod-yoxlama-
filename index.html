@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kod Yoxlama</title>
+<style>
+body{font-family:Arial;background:#111;color:white;text-align:center;padding:40px 20px}
+.box{max-width:400px;margin:auto;background:#222;padding:25px;border-radius:15px}
+input,button{width:100%;box-sizing:border-box;padding:14px;margin-top:12px;border-radius:8px;font-size:17px}
+button{background:#20a040;color:white;border:0}
+#result{margin-top:20px;font-size:18px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>🎟️ Kod Yoxlama</h1>
+<p>Kodunu daxil et:</p>
+<input id="code" placeholder="00-00-00-00-00-00-00">
+<button onclick="yoxla()">Kodu yoxla</button>
+<div id="result"></div>
+</div>
 
+<script>
+const kodlar={
+"53-84-60-12-47-04-56":"Test kodu — 50 AZN",
+"12-34-56-78-90-11-22":"Kod etibarlıdır"
+};
+
+function yoxla(){
+const kod=document.getElementById("code").value.trim();
+const netice=document.getElementById("result");
+
+if(kodlar[kod]){
+netice.innerHTML="✅ "+kodlar[kod];
+}else{
+netice.innerHTML="❌ Kod tapılmadı";
+}
+}
+</script>
+</body>
+</html>
